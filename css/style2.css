@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+	box-sizing: border-box;
+}
+
+nav {
+	position: fixed;
+	z-index: 2;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 80px;
+	padding: 0 1.5em;
+	background-color:#fff;
+	font-family: 'Montserrat', sans-serif;
+}
+nav .logo img{
+	padding:15px 15px 15px 0;
+	width: 15%;
+}
+nav .nav-menu {
+	position: absolute;
+	right: 1.5em;
+	top: 0;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+nav .nav-item {
+	display: inline-block;
+}
+nav .nav-item > a {
+	display: inline-block;
+	padding: 0 1.5em;
+	line-height: 70px;
+	color: #333;
+	font-size: 14px;
+	text-decoration: none;
+}
+nav .nav-item > a:hover{
+	color: #000;
+	font-weight: bold;
+	transition: 0.5s;
+
+
+}
+nav .dropdown {
+	position: relative;
+}
+nav .dropdown a::after {
+	content: '';
+	display: inline-block;
+	margin-left: .5em;
+	vertical-align: middle;
+	border-top: .3em solid #333;
+	border-right: .3em solid transparent;
+	border-left: .3em solid transparent;
+}
+nav .dropdown.show a::after {
+	transform: rotate(180deg);
+}
+nav .dropdown a:hover{
+	font-weight: bold;
+}
+nav .dropdown-menu {
+	display: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
+	padding: .5em 0;
+	margin-top: -.5em;
+	border: 1px solid rgba(0,0,0,.3);
+	border-radius: .5em;
+	background-color: #fff;
+}
+nav .dropdown.show .dropdown-menu {
+	display: block;
+}
+nav .dropdown-item {
+	display: block;
+	padding: 0 1em;
+	font-size: .875em;
+	color: #000;
+	line-height: 3;
+	text-decoration: none;
+}
+nav .btn-hamburger {
+	display: none;
+	position: absolute;
+	right: 1.5em;
+	top: 50%;
+	background-color: transparent;
+	border: 0;
+	cursor: pointer;
+	outline: none;
+	transform: translateY(-50%);
+}
+nav .btn-hamburger span {
+	display: block;
+	width: 30px;
+	height: 4px;
+	background-color: #000;
+	margin: 6px;
+	border-radius: 2px;
+	transition: .3s ease-in-out;
+}
+nav .btn-hamburger span:nth-child(4),
+nav .btn-hamburger span:nth-child(5) {
+	position: absolute;
+	top: 10px;
+	opacity: .5;
+}
+nav .btn-hamburger span:nth-child(4) {
+	transform: rotate(45deg) scale(0);
+}
+nav .btn-hamburger span:nth-child(5) {
+	transform: rotate(-45deg) scale(0);
+}
+nav.opened .btn-hamburger span:nth-child(4) {
+	opacity: 1;
+	transform: rotate(45deg) scale(1);
+}
+nav.opened .btn-hamburger span:nth-child(5) {
+	opacity: 1;
+	transform: rotate(-45deg) scale(1);
+}
+nav.opened .btn-hamburger span:nth-child(1),
+nav.opened .btn-hamburger span:nth-child(2),
+nav.opened .btn-hamburger span:nth-child(3) {
+	opacity: 0;
+}
+
+/*    ----------------------BAGIAN KEDUA ROW----------------------  */
+.hero{
+	padding-top: 6%;
+	width: 100%;
+	min-height: 100vh;
+	background-color: #f5f5f0;
+	padding-right: 6%;
+	padding-left: 6%;
+	padding-bottom: 2%;
+}
+button {
+	padding: 13px 25px;
+	border:0;
+	outline: none;
+	border-radius: 25px;
+	background-color: #333;
+	color: #fff;
+	font-size: 14px;
+	cursor: pointer;
+	box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+} 
+button:hover{
+	background-color: red;
+	transition: 0.5s;
+}
+.row{
+	display: flex;
+	width: 100%;
+	margin-top:20px;
+	background: #fff;
+	border-radius: 15px;
+	overflow: hidden;
+}
+.col-1,.col-2 {
+	flex-basis: 50%;
+	overflow: hidden;
+}
+.col-2 img{
+	width: 100%;
+}
+.col-1 {
+	padding: 8% 5%;
+	position: relative;
+}
+.col-1 h1{
+	font-size: 40px;
+	line-height: 50px;
+	letter-spacing: 2px;
+	color: #333;
+}
+.col-1 p {
+	color: #777;
+	line-height: 22px;
+	margin: 15px 0 30px;
+	font-size: 14px;
+	text-align: justify;
+}
+.titik ul {
+	position: absolute;
+	bottom: 30px;
+
+}
+.titik ul li {
+	list-style: none;
+	width: 15px;
+	height: 15px;
+	display: inline-block;
+	background:#bfbfbf;
+	border-radius: 50%;
+	margin-right: 15px;
+	cursor: pointer;
+}
+.titik ul .active {
+	background: #000;
+}
+
+.zoom{
+	animation: zoomout 1s linear 1;
+
+}
+@keyframes zoomout{
+	0%{
+		transform: scale(1.2);
+	}
+	100%{
+		transform: scale(1);
+	}
+}
+footer {
+	text-align: center;
+	font-size: 12px;
+	color: #000;
+	margin-top: 20px;
+}
+
+
+/*--------------------------RESPONSIVE NAVBAR---------------*/
+
+
+@media screen and (max-width: 768px) {
+	nav{
+		height: 70px;
+	}
+	nav .nav-menu {
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 70px;
+		bottom: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		background-color: #333;
+		transition: bottom .5s ease-in-out;
+		overflow: hidden;
+	}
+	nav .logo img{
+	width: 40%;
+	margin-top:10px;
+
+	
+}
+	nav.opened .nav-menu {
+		bottom: 0;
+	}
+	nav .nav-item > a {
+		display: block;
+		color: #fff;
+	}
+	nav .dropdown-menu {
+		position: relative;
+		top: 0;
+		margin: 0 1.5em;
+	}
+	nav .btn-hamburger {
+		display: block;
+	}
+	.hero{
+		margin-top: 30px;
+	}
+	.row {
+		display: block;
+		margin-top: 10%;
+	}
+	.col-1 h1{
+	font-size: 25px;
+	line-height: 30px;
+	letter-spacing: 0.5px;
+	color: #333;
+	}
+	.col-1 p {
+		color: #777;
+		line-height: 10px;
+		font-size:12px;
+		margin: 15px 0 30px;
+		text-align: justify;
+	}
+	.titik ul li {
+	list-style: none;
+	width: 10px;
+	height: 10px;
+}
+	button {
+	padding: 5px 10px;
+	margin-bottom: 40px;
+	border:0;
+	outline: none;
+	border-radius: 25px;
+	background-color: #333;
+	color: #fff;
+	font-size: 10px;
+	cursor: pointer;
+	box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+} 
+}
+
